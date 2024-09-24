@@ -1,1 +1,8 @@
 @import "./tailwind.css";
+.title{
+    color: blue;
+}
+
+h1 {
+    color: red;
+}
