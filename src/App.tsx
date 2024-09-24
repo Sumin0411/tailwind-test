@@ -1,42 +1,36 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
+import { twMerge } from "tailwind-merge";
+import styled from "styled-components";
 
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vitejs.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.tsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-
-// export default App
+const HelloWorld = styled.h1`
+  font-size: 30px;
+  color: #ed4848;
+  text-decoration: line-through;
+  &:hover{
+    color:blue;
+  }
+`;
 export default function App() {
+  const isActive = true;
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
+    <>
+    <h1 
+      className={twMerge(
+        "text-rose-500", 
+        "font-bold",
+        "text-5xl",
+        "text-black"
+      )}
+    >
+      Hello World!
     </h1>
+    <button
+      className = {twMerge(
+        "p-2 border border-gray-500 rounded-md bg-black text-white",
+        isActive && "bg-blue-500 border-blue-500"
+    )}
+    >
+      클릭
+    </button>
+    </>
   )
 }
